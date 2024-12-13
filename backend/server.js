@@ -1,7 +1,8 @@
 const express = require('express');
+const authRoutes = require('./routes/authRoutes')
 const { config } = require('dotenv');
 const { connectToMongoDB } = require('./lib/connection');
-const cookieParser = require('cookie-parser'); 
+const cookieParser = require('cookie-parser');
 const cors = require("cors");
 
 const app = express();
@@ -351,6 +352,7 @@ const products = [
 app.get('/api/products', (req, res) => {
     return res.status(200).json(products)
 });
+app.use('/api/auth', authRoutes)
 // Route Ends
 
 // Start the server
