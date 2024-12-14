@@ -14,22 +14,60 @@ const ProductSchema = new Schema({
         required: true,
         min: 0,
     },
-    image: {
+    reviews: [{
+        type: Schema.Types.ObjectId,
+        ref: "Review"
+    }],
+    averageRating: {
+        type: Number,
+        default: 0, // Initially, there is no rating
+    },
+    reviewCount: {
+        type: Number,
+        default: 0, // Initially, there are no reviews
+    },
+    stocks: {
+        type: Number,
+        required: true,
+    },
+    color: {
         type: String,
-        required: [true, "Image is required"],
+        required: true,
+    },
+    country: {
+        type: String,
+    },
+    sizes: {
+        type: Array,
+        required: true
+    },
+    images: {
+        type: [String],
+        required: [true, "At least one image is required"],
+        validate: {
+            validator: function (images) {
+                return images.length <= 9; // Limit to 5 images
+            },
+            message: "A maximum of 10 images is allowed!"
+        }
     },
     category: {
         type: String,
         required: true,
     },
-    isFeatured: {
+    is_featured: {
         type: Boolean,
         default: false
     },
-    isNew: {
-        type: Boolean,
-        default: true
+    status: {
+        type: String,
+        default: "Just in"
     },
+    high_light: {
+        type: String,
+        default: "Normal"
+    }
+
 }, { timestamps: true })
 
 

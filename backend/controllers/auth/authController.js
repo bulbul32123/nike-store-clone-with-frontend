@@ -94,7 +94,7 @@ const logout = async (req, res) => {
 }
 
 
-const refreshToken = async (req, res) => {
+const generateNewAccessTokenUsingRefreshToken = async (req, res) => {
     try {
         const refreshToken = req.cookies.refreshToken
         if (!refreshToken) {
@@ -129,4 +129,4 @@ const authenticatedUser = (req, res) => {
 
 }
 
-module.exports = { signup, refreshToken, authenticatedUser, login, logout }
+module.exports = { signup, generateNewAccessTokenUsingRefreshToken, authenticatedUser, login, logout }

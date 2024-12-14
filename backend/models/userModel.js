@@ -13,6 +13,10 @@ const UserSchema = new Schema({
         lowercase: true,
         trim: true
     },
+    profile_pic: {
+        type: String,
+        default: ""
+    },
     password: {
         type: String,
         required: [true, "Password is Required!"],
