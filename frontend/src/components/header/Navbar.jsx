@@ -95,7 +95,7 @@ export default function Navbar() {
                             {menu.links.map((link, index) => (
                               <Link
                                 key={index}
-                                to={`#${link.toLowerCase().replace(/\s/g, "-")}`}
+                                to={`/`}
                                 className="block w-48 text-xs text-gray-500 hover:text-black"
                               >
                                 {link}

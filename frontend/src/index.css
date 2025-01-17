@@ -13,10 +13,10 @@
   .ObjectCover {
     @apply object-cover object-center;
   }
-  .FlexCenter{
+  .FlexCenter {
     @apply flex justify-center items-center;
   }
-  .FlexBetween{
+  .FlexBetween {
     @apply flex justify-between items-center;
   }
 }
@@ -30,4 +30,10 @@
 }
 h3 {
   font-family: "Nike Futura ND";
+}
+
+
+.react-multi-carousel-list {
+  position: static !important;
+  overflow: visible !important;
 }

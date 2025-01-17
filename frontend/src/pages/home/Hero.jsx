@@ -6,7 +6,7 @@ export default function Hero() {
     const [isLoading, setIsLoading] = useState(true);
     return (
         <div className="padding-sm">
-            <Link to={`/shop`} className="h-full w-full">
+            <Link to={`/`} className="h-full w-full">
                 <div className="relative w-full h-full">
                     {isLoading && (
                         <div className="h-[50vh] md:h-[90vh] w-full bg-grayLight animate-pulse">
