@@ -7,7 +7,7 @@ import LeftArrow from "../icons/LeftArrow";
 import RightArrow from "../icons/RightArrow";
 
 const Arrivals = () => {
-    const itemsPerPage = 3; // Adjust based on your design
+    const itemsPerPage = 3;
     const [currentSlide, setCurrentSlide] = useState(0);
     const totalSlides = productsData.length - itemsPerPage + 1;
 

@@ -12,19 +12,18 @@ export default function Navbar() {
   const [lastScrolly, setLastScrolly] = useState(0);
   const [inputFocused, setInputFocused] = useState(false);
   const [input, setInput] = useState("");
-  const [hoveredItem, setHoveredItem] = useState(null); // Track the hovered `li`
+  const [hoveredItem, setHoveredItem] = useState(null); 
   const searchBoxRef = useRef(null);
 
 
 
-  // Disable scrolling when SearchBox is open
   useEffect(() => {
     if (inputFocused) {
       document.body.classList.add("no-scroll");
     } else {
       document.body.classList.remove("no-scroll");
     }
-    return () => document.body.classList.remove("no-scroll"); // Cleanup on unmount
+    return () => document.body.classList.remove("no-scroll"); 
   }, [inputFocused]);
 
   const controlNavbar = () => {
